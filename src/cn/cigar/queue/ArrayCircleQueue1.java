@@ -6,7 +6,7 @@ package cn.cigar.queue;
  * @author Cigar
  * 为了能够区分出队列空或慢，约定预留一个单元的空间
  */
-public class ArrayCircleQueue {
+public class ArrayCircleQueue1 {
 
     /**
      * 队头指针
@@ -28,14 +28,14 @@ public class ArrayCircleQueue {
      */
     int[] queue;
 
-    public ArrayCircleQueue(int maxSize) {
+    public ArrayCircleQueue1(int maxSize) {
         front = 0;
         rear = 0;
         this.maxSize = maxSize;
         queue = new int[maxSize];
     }
 
-    public ArrayCircleQueue() {
+    public ArrayCircleQueue1() {
         this(5);
     }
 
@@ -87,7 +87,7 @@ public class ArrayCircleQueue {
     }
 
     public static void main(String[] args) {
-        ArrayCircleQueue q = new ArrayCircleQueue(4);
+        ArrayCircleQueue1 q = new ArrayCircleQueue1(4);
         System.out.println(q.add(1));
         System.out.println(q.add(2));
         System.out.println(q.add(3));
