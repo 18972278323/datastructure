@@ -1,5 +1,6 @@
 package cn.cigar.queue;
 
+
 /**
  * 数组模拟循环队列
  *
@@ -84,17 +85,6 @@ public class ArrayCircleQueue1 {
      */
     public boolean isEmpty() {
         return rear == front;
-    }
-
-    public static void main(String[] args) {
-        ArrayCircleQueue1 q = new ArrayCircleQueue1(4);
-        System.out.println(q.add(1));
-        System.out.println(q.add(2));
-        System.out.println(q.add(3));
-        System.out.println(q.add(4));
-        for(int i=0;i<4;i++){
-            System.out.println(q.remove());
-        }
     }
 
 }
