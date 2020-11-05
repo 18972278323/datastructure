@@ -26,7 +26,14 @@ public class SingleLinkedList {
         tmp.setNext(node);
     }
 
+    /**
+     * 删除节点
+     * @param no
+     */
     public void delete(int no) {
+        if (this.isEmpty()){
+            return;
+        }
         HeroNode tmp = this.head;
         while (tmp.getNext() != null) {
             // 当前指针的下一个元素即为要删除的
@@ -40,7 +47,17 @@ public class SingleLinkedList {
         if (tmp.getNext() != null){
             tmp.setNext(tmp.getNext().getNext());
 
+
         }
+    }
+
+
+    /**
+     * 判断当前链表是否有有效元素
+     * @return
+     */
+    public boolean isEmpty() {
+        return this.head.getNext() == null;
     }
 }
 
