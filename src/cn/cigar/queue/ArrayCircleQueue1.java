@@ -1,12 +1,13 @@
 package cn.cigar.queue;
 
+
 /**
  * 数组模拟循环队列
  *
  * @author Cigar
  * 为了能够区分出队列空或慢，约定预留一个单元的空间
  */
-public class ArrayCircleQueue {
+public class ArrayCircleQueue1 {
 
     /**
      * 队头指针
@@ -28,14 +29,14 @@ public class ArrayCircleQueue {
      */
     int[] queue;
 
-    public ArrayCircleQueue(int maxSize) {
+    public ArrayCircleQueue1(int maxSize) {
         front = 0;
         rear = 0;
         this.maxSize = maxSize;
         queue = new int[maxSize];
     }
 
-    public ArrayCircleQueue() {
+    public ArrayCircleQueue1() {
         this(5);
     }
 
@@ -84,17 +85,6 @@ public class ArrayCircleQueue {
      */
     public boolean isEmpty() {
         return rear == front;
-    }
-
-    public static void main(String[] args) {
-        ArrayCircleQueue q = new ArrayCircleQueue(4);
-        System.out.println(q.add(1));
-        System.out.println(q.add(2));
-        System.out.println(q.add(3));
-        System.out.println(q.add(4));
-        for(int i=0;i<4;i++){
-            System.out.println(q.remove());
-        }
     }
 
 }
