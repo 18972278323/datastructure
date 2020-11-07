@@ -27,6 +27,29 @@ public class testLinkedList {
         linkedList.add(node4);
 
         linkedList.list();
+
+        System.out.println("删除order为4的节点");
+        linkedList.delete(4);
+        linkedList.list();
+
+        System.out.println("更新order为3的节点");
+        HeroNode node = new HeroNode(3, "李安然", null);
+        linkedList.update(node);
+        linkedList.list();
+
+        System.out.println("计算链表的长度");
+        int length = InterviewSingleLinkedList.getLength(linkedList);
+        System.out.println("length = " + length);
+
+        System.out.println("查询链表倒数第1个元素");
+        HeroNode indexNode = InterviewSingleLinkedList.getLastIndexNode(linkedList, 1);
+        System.out.println("delete = " + indexNode);
+        linkedList.list();
+
+        System.out.println("单链表反转");
+        SingleLinkedList reverse = InterviewSingleLinkedList.reverse(linkedList);
+        reverse.list();
+
     }
 
 }

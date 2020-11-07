@@ -9,8 +9,20 @@ public class SingleLinkedList {
 
     private HeroNode head;
 
+    public HeroNode getHead() {
+        return head;
+    }
+
+    public void setHead(HeroNode head) {
+        this.head = head;
+    }
+
     public SingleLinkedList() {
         this.head = new HeroNode(0, null, null);
+    }
+
+    public SingleLinkedList(HeroNode head) {
+        this.head = head;
     }
 
     /**
@@ -58,7 +70,34 @@ public class SingleLinkedList {
         return false;
     }
 
+    /**
+     * 更新指定顺序的节点数据
+     * @param node
+     * @return
+     */
+    public boolean update(HeroNode node) {
+        if (isEmpty()) {
+            System.out.println("链表为空");
+            return false;
+        }
 
+        boolean updateFlag = false;
+        HeroNode tmp = head;
+        while (tmp.getNext() != null) {
+            tmp = tmp.getNext();
+            if (tmp.getOrder() == node.getOrder()) {
+                tmp.setData(node.getData());
+                updateFlag = true;
+            }
+        }
+
+        return updateFlag;
+    }
+
+
+    /**
+     * 打印当前链表
+     */
     public void list() {
         if (isEmpty()) {
             System.out.println("当前链表为空");
@@ -71,6 +110,7 @@ public class SingleLinkedList {
             }
         }
     }
+
 
 
     /**
