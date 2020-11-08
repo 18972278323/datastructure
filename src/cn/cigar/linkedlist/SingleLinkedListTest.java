@@ -3,7 +3,7 @@ package cn.cigar.linkedlist;
 /**
  * @author Cigar
  */
-public class testLinkedList {
+public class SingleLinkedListTest {
 
     public static void main(String[] args) {
         testSingleLinkedList();
@@ -16,10 +16,10 @@ public class testLinkedList {
     private static void testSingleLinkedList() {
         SingleLinkedList linkedList = new SingleLinkedList();
 
-        HeroNode node1 = new HeroNode(1, "加雪松", null);
-        HeroNode node2 = new HeroNode(2, "林南松", null);
-        HeroNode node3 = new HeroNode(3, "郑紫琴", null);
-        HeroNode node4 = new HeroNode(4, "傅贝贝", null);
+        SingleHeroNode node1 = new SingleHeroNode(1, "加雪松", null);
+        SingleHeroNode node2 = new SingleHeroNode(2, "林南松", null);
+        SingleHeroNode node3 = new SingleHeroNode(3, "郑紫琴", null);
+        SingleHeroNode node4 = new SingleHeroNode(4, "傅贝贝", null);
 
         linkedList.add(node1);
         linkedList.add(node2);
@@ -33,23 +33,26 @@ public class testLinkedList {
         linkedList.list();
 
         System.out.println("更新order为3的节点");
-        HeroNode node = new HeroNode(3, "李安然", null);
+        SingleHeroNode node = new SingleHeroNode(3, "李安然", null);
         linkedList.update(node);
         linkedList.list();
 
         System.out.println("计算链表的长度");
-        int length = InterviewSingleLinkedList.getLength(linkedList);
+        int length = SingleLinkedListInterview.getLength(linkedList);
         System.out.println("length = " + length);
 
         System.out.println("查询链表倒数第1个元素");
-        HeroNode indexNode = InterviewSingleLinkedList.getLastIndexNode(linkedList, 1);
+        SingleHeroNode indexNode = SingleLinkedListInterview.getLastIndexNode(linkedList, 1);
         System.out.println("delete = " + indexNode);
         linkedList.list();
 
-        System.out.println("单链表反转");
-        SingleLinkedList reverse = InterviewSingleLinkedList.reverse(linkedList);
-        reverse.list();
+        System.out.println("单链表反转1");
+        SingleLinkedListInterview.reverse(linkedList);
+        linkedList.list();
 
+        System.out.println("单链表反转2");
+        SingleLinkedListInterview.reverse2(linkedList);
+        linkedList.list();
     }
 
 }

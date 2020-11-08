@@ -7,21 +7,21 @@ package cn.cigar.linkedlist;
  */
 public class SingleLinkedList {
 
-    private HeroNode head;
+    private SingleHeroNode head;
 
-    public HeroNode getHead() {
+    public SingleHeroNode getHead() {
         return head;
     }
 
-    public void setHead(HeroNode head) {
+    public void setHead(SingleHeroNode head) {
         this.head = head;
     }
 
     public SingleLinkedList() {
-        this.head = new HeroNode(0, null, null);
+        this.head = new SingleHeroNode(0, null, null);
     }
 
-    public SingleLinkedList(HeroNode head) {
+    public SingleLinkedList(SingleHeroNode head) {
         this.head = head;
     }
 
@@ -29,8 +29,8 @@ public class SingleLinkedList {
      * 添加节点
      * @param node
      */
-    public void add(HeroNode node) {
-        HeroNode tmp = this.head;
+    public void add(SingleHeroNode node) {
+        SingleHeroNode tmp = this.head;
         while (tmp.getNext() != null){
             tmp = tmp.getNext();
         }
@@ -47,7 +47,7 @@ public class SingleLinkedList {
             return false;
         }
         boolean findFlag = false;
-        HeroNode tmp = this.head;
+        SingleHeroNode tmp = this.head;
         while (tmp.getNext() != null) {
             // 当前指针的下一个元素即为要删除的
             if (tmp.getNext().getOrder() == order) {
@@ -75,14 +75,14 @@ public class SingleLinkedList {
      * @param node
      * @return
      */
-    public boolean update(HeroNode node) {
+    public boolean update(SingleHeroNode node) {
         if (isEmpty()) {
             System.out.println("链表为空");
             return false;
         }
 
         boolean updateFlag = false;
-        HeroNode tmp = head;
+        SingleHeroNode tmp = head;
         while (tmp.getNext() != null) {
             tmp = tmp.getNext();
             if (tmp.getOrder() == node.getOrder()) {
@@ -102,7 +102,7 @@ public class SingleLinkedList {
         if (isEmpty()) {
             System.out.println("当前链表为空");
         } else {
-            HeroNode tmp = this.head;
+            SingleHeroNode tmp = this.head;
 
             while (tmp.getNext() != null) {
                 tmp = tmp.getNext();
@@ -123,50 +123,3 @@ public class SingleLinkedList {
 }
 
 
-class HeroNode {
-    private int order;
-
-    private Object data;
-
-    private HeroNode next;
-
-    public HeroNode(int order, Object data, HeroNode next) {
-        this.order = order;
-        this.data = data;
-        this.next = next;
-    }
-
-    public HeroNode() { }
-
-    @Override
-    public String toString() {
-        return "HeroNode{" +
-                "order=" + order +
-                ", data=" + data +
-                '}';
-    }
-
-    public int getOrder() {
-        return order;
-    }
-
-    public void setOrder(int order) {
-        this.order = order;
-    }
-
-    public Object getData() {
-        return data;
-    }
-
-    public void setData(Object data) {
-        this.data = data;
-    }
-
-    public HeroNode getNext() {
-        return next;
-    }
-
-    public void setNext(HeroNode next) {
-        this.next = next;
-    }
-}
