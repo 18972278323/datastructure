@@ -104,4 +104,29 @@ public class SingleLinkedListInterview {
         }
 
     }
+
+
+    /**
+     * 使用栈完成链表的逆序打印
+     * @param linkedList 目标链表
+     */
+    public static void reversePrint(SingleLinkedList linkedList) {
+        if (linkedList.isEmpty()) {
+            return;
+        }
+
+        Stack<SingleHeroNode> singleHeroNodes = new Stack<>();
+
+        SingleHeroNode tmp = linkedList.getHead();
+        while (tmp.getNext() != null) {
+            tmp = tmp.getNext();
+            singleHeroNodes.push(tmp);
+        }
+
+        while (singleHeroNodes.size() > 0){
+            SingleHeroNode node = singleHeroNodes.pop();
+            System.out.println(node);
+        }
+
+    }
 }

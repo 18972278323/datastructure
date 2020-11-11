@@ -53,6 +53,9 @@ public class SingleLinkedListTest {
         System.out.println("单链表反转2");
         SingleLinkedListInterview.reverse2(linkedList);
         linkedList.list();
+
+        System.out.println("逆序打印");
+        SingleLinkedListInterview.reversePrint(linkedList);
     }
 
 }
