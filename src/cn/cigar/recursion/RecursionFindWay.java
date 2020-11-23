@@ -8,6 +8,7 @@ public class RecursionFindWay {
 
         int[][] array = init();
 
+        // 起点为 (1,1)
         isPass(array, 1, 1);
 
         print(array);
@@ -24,6 +25,7 @@ public class RecursionFindWay {
     private static boolean isPass(int[][] array, int x, int y) {
         // 1：墙  2：可通行 3：不可通行
         if (array[8][8] == 2) {
+            // 终点为 (8,8)
             return true;
         }
 
@@ -51,7 +53,10 @@ public class RecursionFindWay {
     }
 
 
-
+    /**
+     * 初始化一个二维数组，为1的部分表示该地点为墙不可通行
+     * @return
+     */
     private static int[][] init() {
         int[][] array = new int[10][10];
 
@@ -70,6 +75,10 @@ public class RecursionFindWay {
         return array;
     }
 
+    /**
+     * 打印二维数组
+     * @param array
+     */
     private static void print(int[][] array) {
         for (int[] ints : array) {
             System.out.println(Arrays.toString(ints));

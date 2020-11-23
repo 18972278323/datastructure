@@ -27,6 +27,7 @@ public class TestSort {
         long start = System.currentTimeMillis();
         ShellSort.shellSort(array8w);
         long end = System.currentTimeMillis();
+        System.out.println(Arrays.toString(array8w));
         System.out.printf("排序[%s]个元素用时间[%s]毫秒，合计[%s]秒\n",  arrayLength, end - start, (end - start)/1000);
     }
 }
