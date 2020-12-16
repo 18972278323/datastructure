@@ -17,7 +17,6 @@ public class ShellSort {
             // 决定分的组数
             for (int i = step; i < array.length; i++) {
                 // 处理每个组内部的排序
-
                 for (int j = i - step; j >= 0; j -= step) {
                     if (array[j] > array[j + step]){
                         tmp = array[j];
@@ -40,14 +39,12 @@ public class ShellSort {
             // 决定分的组数
             for (int i = step; i < array.length; i++) {
                 // 处理每个组内部的排序
-
                 int j = i;
                 tmp = array[j];
                 while (j - step >= 0 && tmp < array[j - step]) {
                     array[j] = array[j - step];
                     j -= step;
                 }
-
                 array[j] = tmp;
             }
         }
