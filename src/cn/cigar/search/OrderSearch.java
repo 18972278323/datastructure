@@ -11,7 +11,7 @@ public class OrderSearch {
      */
     public static int orderSearch(int[] arr, int des) {
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == i) {
+            if (arr[i] == des) {
                 return i;
             }
         }
