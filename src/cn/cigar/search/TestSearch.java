@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class TestSearch {
 
     public static void main(String[] args) {
-        int des = 0;
+        int des = 11;
 //        int[] array = {-6, 4, 0, 34, 107, -4, 40, 2, -8, 10};
         int[] array = {1, 3, 5, 8, 10, 11, 20};
 

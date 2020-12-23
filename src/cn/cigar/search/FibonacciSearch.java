@@ -51,10 +51,10 @@ public class FibonacciSearch {
             mid = low + F[k - 1] - 1;
 
             // 通过low,high控制区间，通过k控制个数
-            if (array[mid] > des) {
+            if (fillArray[mid] > des) {
                 high = mid - 1;
                 k--;
-            } else if (array[mid] < des) {
+            } else if (fillArray[mid] < des) {
                 low = mid + 1;
                 k-=2;
             } else {
@@ -64,4 +64,5 @@ public class FibonacciSearch {
 
         return -1;
     }
+
 }
